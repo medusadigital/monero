@@ -263,7 +263,7 @@ if (BUILD_SHARED_LIBS)
 else()
   message(STATUS "Building internal libraries as static")
 endif()
-set(PIC_FLAG "-fPIC")
+#set(PIC_FLAG "-fPIC")
 
 if(MINGW)
   string(REGEX MATCH "^[^/]:/[^/]*" msys2_install_path "${CMAKE_C_COMPILER}")
@@ -553,7 +553,7 @@ else()
   # linker
   if (NOT WIN32)
     # Windows binaries die on startup with PIE
-    add_linker_flag_if_supported(-pie LD_SECURITY_FLAGS)
+  #  add_linker_flag_if_supported(-pie LD_SECURITY_FLAGS)
   endif()
   add_linker_flag_if_supported(-Wl,-z,relro LD_SECURITY_FLAGS)
   add_linker_flag_if_supported(-Wl,-z,now LD_SECURITY_FLAGS)
